@@ -1,0 +1,53 @@
+.brand {
+  display: inline;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-indent: -9999px;
+  outline: none;
+}
+
+.jumbotron {
+  margin-bottom: 0;
+  background-color: #FFDD15;
+
+  .splash-image {
+    width: 256px;
+  }
+
+  .container {
+    max-width: 30rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  .jumbotron-heading {
+    font-size: 2rem;
+    font-weight: 200;
+  }
+}
+
+.marketing {
+  .album-alt {
+    background-color: #F27C56;
+
+    .card {
+      margin-bottom: 0;
+      color: #fff;
+      background: transparent;
+    }
+  }
+
+  .card {
+    padding: .75rem;
+    border: 0;
+  }
+}
+
+footer {
+  border-top: 1px solid #f6f6f6;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
