@@ -1,0 +1,17 @@
+<div class="invite container-fluid">
+  <div class="row invite-title">
+    <div  class="col-md-1">
+      <%= link_to image_tag(current_user.try(:image_url), class: 'avatar img-circle'), current_user %>
+    </div>
+    <div>
+      <%= link_to invite.title, invite %>
+      at <%= invite.location %> around <%= invite.date.to_formatted_s(:long)  %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-1">
+    <%= invite.description %>
+    </div>
+  </div>
+</div>
+<hr>

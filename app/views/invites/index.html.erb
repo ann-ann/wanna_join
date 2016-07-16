@@ -1,0 +1,6 @@
+<div class="container">
+  <h2>People around:</h1>
+  <%= render partial: "invite", collection: @invites %>
+
+  <%= link_to t('.create_invite'), new_invite_path, class: "btn btn-primary" %>
+</div>

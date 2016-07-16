@@ -1,0 +1,27 @@
+<p>
+  <strong>Creator:</strong>
+  <%= @invite.user.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @invite.description %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @invite.title %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @invite.date %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @invite.location %>
+</p>
+
+<%= link_to 'Edit', edit_invite_path(@invite) %> |
+<%= link_to 'Back', invites_path %>

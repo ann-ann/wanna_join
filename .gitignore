@@ -15,3 +15,9 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+node_modules
+.env
+.DS_Store
+.pow_env
+/vendor

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :invites
   mount ActionCable.server => '/cable'
 
   root to: 'welcome#index'
