@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :invites
+  has_many :comments
 
   validates :name,       presence: true
   validates :uid,        presence: true, uniqueness: true

@@ -15,6 +15,7 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'font-awesome-sass'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
+gem 'redis'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether'

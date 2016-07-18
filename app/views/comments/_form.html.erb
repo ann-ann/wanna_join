@@ -1,0 +1,12 @@
+<%= render 'shared/errors', object: @comment %>
+
+<%= form_for [ @invite, @comment], remote: true, id: 'comments-form'  do |f| %>
+  <fieldset class="form-group">
+    <%= f.label :text %>
+    <%= f.text_field :text, class: "form-control" %>
+  </fieldset>
+
+  <div class="form-actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -16,3 +16,4 @@
 //= require_tree .
 //= require tether
 //= require bootstrap
+//= require_tree ./channels

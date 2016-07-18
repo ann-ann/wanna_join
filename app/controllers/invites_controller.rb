@@ -6,6 +6,7 @@ class InvitesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
   end
 
   def new
@@ -30,10 +31,8 @@ class InvitesController < ApplicationController
     respond_to do |format|
       if @invite.update(invite_params)
         format.html { redirect_to @invite, notice: 'Invite was successfully updated.' }
-        format.json { render :show, status: :ok, location: @invite }
       else
         format.html { render :edit }
-        format.json { render json: @invite.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,7 +42,6 @@ class InvitesController < ApplicationController
     @invite.destroy
     respond_to do |format|
       format.html { redirect_to invites_url, notice: 'Invite was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 

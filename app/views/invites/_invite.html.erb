@@ -1,3 +1,5 @@
+<%= render 'shared/errors', object: invite %>
+
 <div class="invite container-fluid">
   <div class="row invite-title">
     <div  class="col-md-1">
@@ -5,7 +7,7 @@
     </div>
     <div>
       <%= link_to invite.title, invite %>
-      at <%= invite.location %> around <%= invite.date.to_formatted_s(:long)  %>
+      at <%= invite.location %> around <%= format_datetime(invite.date)  %>
     </div>
   </div>
   <div class="row">
