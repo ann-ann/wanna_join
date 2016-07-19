@@ -25,14 +25,15 @@
 <hr>
 <div class="panel panel-default">
   <h4>Comments:</h3>
-  <% if @invite.comments.any? %>
     <div class="panel-body" id="comments">
-      <%= render partial: 'comments/comment', collection: @invite.comments %>
+      <% if @invite.comments.any? %>
+        <%= render partial: 'comments/comment', collection: @invite.comments %>
+      <%end%>
     </div>
-  <%end%>
+
 </div>
 
 <%= render 'comments/form' %>
 
-<%= link_to 'Edit', edit_invite_path(@invite) %> |
-<%= link_to 'Back', invites_path %>
+<%= link_to t('.edit'), edit_invite_path(@invite) %> |
+<%= link_to t('.back'), invites_path %>

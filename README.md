@@ -1,24 +1,22 @@
-# README
+https://wanna-join.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby 2.3.0, Rails 5
 
-Things you may want to cover:
+ ## System dependencies
+- Postgres
+- Redis
 
-* Ruby version
+## Configuration
+- Clone repo from git: git clone git@github.com:ann-ann/wann_join.git
+- bundle install
 
-* System dependencies
+## Database creation
+bundle exec rake db:create db:migrate
 
-* Configuration
 
-* Database creation
+## Heroku deploy:
+git push heroku master
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Running test suite
+bundle exec spec

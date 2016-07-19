@@ -2,6 +2,13 @@ en:
   invites:
     index:
       create_invite: Add invite
+    show:
+      edit: 'Edit'
+      back: 'Back'
+    edit:
+      show: 'Show'
+      back: 'Back'
+
 
   helpers:
     cancel: Cancel
@@ -10,11 +17,10 @@ en:
         create: Add event!
         update: Update
   flash:
-    actions:
+    invites:
       create:
-        notice: "%{resource_name} was successfully created."
+        notice: "Invite was successfully created."
       update:
-        notice: "%{resource_name} was successfully updated."
+        notice: "Invite was successfully updated."
       destroy:
-        notice: "%{resource_name} was successfully destroyed."
-        alert: "%{resource_name} could not be destroyed."
+        notice: "Invite was successfully destroyed."

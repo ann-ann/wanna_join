@@ -1,7 +1,7 @@
 <section class="jumbotron jumbotron-fluid text-xs-center p-t-4 p-b-3">
   <div class="container">
     <h2><%= link_to "WannaJoin?", invites_path %></h2>
-    <h1 class="jumbotron-heading">WannaJoin is a great place to meet new people or just a company for an event</h1>
+    <h1 class="jumbotron-heading">WannaJoin is a great place to meet new people or just find  a company for an event</h1>
     <div class=" m-t-2">
       <% unless current_user %>
         <%= link_to 'Sign in with Facebook', '/auth/facebook', class: 'btn btn-primary-outline btn-lg' %>

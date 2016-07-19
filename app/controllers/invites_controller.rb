@@ -20,7 +20,7 @@ class InvitesController < ApplicationController
     @invite = current_user.invites.new(invite_params)
     respond_to do |format|
       if @invite.save
-        format.html { redirect_to invites_url, flash: { success: 'Invite created!' } }
+        format.html { redirect_to invites_url, flash: { success: t('flash.invites.create.notice') } }
       else
         format.html { render action: "new" }
       end
@@ -30,7 +30,7 @@ class InvitesController < ApplicationController
   def update
     respond_to do |format|
       if @invite.update(invite_params)
-        format.html { redirect_to @invite, notice: 'Invite was successfully updated.' }
+        format.html { redirect_to @invite, notice: t('flash.invites.update.notice') }
       else
         format.html { render :edit }
       end
@@ -41,7 +41,7 @@ class InvitesController < ApplicationController
   def destroy
     @invite.destroy
     respond_to do |format|
-      format.html { redirect_to invites_url, notice: 'Invite was successfully destroyed.' }
+      format.html { redirect_to invites_url, notice:  t('flash.invites.destroy.notice') }
     end
   end
 

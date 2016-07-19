@@ -17,6 +17,8 @@ gem 'font-awesome-sass'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'redis'
+gem 'factory_girl_rails'
+gem 'faker'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether'
@@ -29,6 +31,7 @@ group :development, :test do
   gem 'pry-byebug', platforms: :mri
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'shoulda-matchers', require: false
   gem 'rspec-activemodel-mocks'
   gem 'guard-rspec'
   gem 'poltergeist'
@@ -50,7 +53,6 @@ group :test do
   gem 'capybara', github: 'jnicklas/capybara'
   gem 'database_cleaner'
   gem 'spring-commands-rspec'
-  gem 'shoulda-matchers', require: nil
   gem 'rspec-retry'
   gem 'rack_session_access'
   gem 'rspec-its'

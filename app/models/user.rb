@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :comments
 
   validates :name,       presence: true
+  validates :email,       presence: true
   validates :uid,        presence: true, uniqueness: true
   validates :image_url,  presence: true
 
