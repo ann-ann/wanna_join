@@ -1,0 +1,31 @@
+<% content_for :javascripts do %>
+  <script type='text/javascript'>
+
+    var geocoder = new google.maps.Geocoder();
+
+    geocode = function()
+    {
+      var address = $('#invite_location').val();
+      geocoder.geocode( { 'address': address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK)
+        {
+          map.setCenter(results[0].geometry.location);
+          var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+          });
+          $('#invite_latitude').val(results[0].geometry.location.lat());
+          $('#invite_longitude').val(results[0].geometry.location.lng());
+        }
+        else
+        {
+          console.log(results);
+          console.log("Geocode was not successful for the following reason: " + status);
+        }
+      });
+    }
+
+  $('#invite_location').keyup(geocode);
+
+  </script>
+<% end %>

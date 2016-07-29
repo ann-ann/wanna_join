@@ -20,6 +20,9 @@ gem 'redis'
 gem 'factory_girl_rails'
 gem 'faker'
 
+# Maps
+gem "geocoder"
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether'
   gem 'rails-assets-SoundJS'

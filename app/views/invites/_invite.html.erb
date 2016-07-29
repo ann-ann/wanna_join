@@ -6,7 +6,7 @@
       <%= link_to image_tag(current_user.try(:image_url), class: 'avatar img-circle'), current_user %>
     </div>
     <div>
-      <%= link_to invite.title, invite %>
+      <%= link_to invite.user.name, invite.user %> says: <%= link_to invite.title, invite %>
       at <%= invite.location %> around <%= format_datetime(invite.date)  %>
     </div>
   </div>
@@ -15,5 +15,6 @@
     <%= invite.description %>
     </div>
   </div>
+
 </div>
 <hr>

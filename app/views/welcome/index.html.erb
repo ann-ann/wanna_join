@@ -44,6 +44,8 @@
   </div>
 </div>
 
+<%= render partial: 'shared/map', locals: { lat: @latitude, lng: @longitude, markers: Invite.markers } %>
+
 <footer class="text-muted">
   <div class="container">
     <p class="pull-xs-right">

@@ -1,28 +1,8 @@
-<p>
-  <strong>Creator:</strong>
-  <%= @invite.user.name %>
-</p>
+<%= render partial: "invite", locals:{invite: @invite} %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @invite.description %>
-</p>
+<%= render partial: 'shared/map', locals: { lat: @invite.latitude , lng: @invite.longitude, markers: [] } %>
+<%= render 'shared/geocoder' %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @invite.title %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @invite.date %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @invite.location %>
-</p>
-<hr>
 <div class="panel panel-default">
   <h4>Comments:</h3>
     <div class="panel-body" id="comments">

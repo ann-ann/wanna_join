@@ -13,6 +13,14 @@
     <%= f.label :location %>
     <%= f.text_field :location, class: "form-control" %>
   </fieldset>
+
+  <%= render partial: 'shared/map', locals: { lat: @invite.latitude , lng: @invite.longitude } %>
+  <%= render 'shared/geocoder' %>
+
+  <%= f.hidden_field :latitude %>
+
+  <%= f.hidden_field :longitude %>
+
   <fieldset class="form-group">
     <%= f.label :date %>
     <%= f.datetime_field :date, class: "form-control" %>

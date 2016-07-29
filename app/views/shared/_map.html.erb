@@ -1,0 +1,31 @@
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+
+<% content_for :javascripts do %>
+  <script type='text/javascript'>
+
+    var latlng = new google.maps.LatLng('<%= lat %>', '<%= lng %>');
+    var myOptions = {
+      zoom: 13,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    map = new google.maps.Map(document.getElementById("map"), myOptions);
+    var marker = new google.maps.Marker({
+      map: map,
+      position: latlng
+    });
+
+    <% if markers.present? %>
+      <% markers.each do |lat, lng| %>
+        var latlng = new google.maps.LatLng('<%= lat %>', '<%= lng %>');
+        var marker = new google.maps.Marker({
+          map: map,
+          position: latlng
+        });
+      <% end %>
+    <% end %>
+
+  </script>
+<% end %>
