@@ -21,7 +21,8 @@ gem 'factory_girl_rails'
 gem 'faker'
 
 # Maps
-gem "geocoder"
+gem 'geocoder'
+gem 'geokit'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether'

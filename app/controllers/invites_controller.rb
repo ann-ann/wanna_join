@@ -51,6 +51,7 @@ class InvitesController < ApplicationController
     end
 
     def invite_params
-      params.require(:invite).permit(:user_id, :description, :title, :date, :location, :latitude, :longitude)
+      params.require(:invite).permit(:user_id, :description, :title, :date, :location, :latitude, :longitude,
+        :country, :city, :location_details)
     end
 end

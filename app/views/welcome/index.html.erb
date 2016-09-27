@@ -43,8 +43,8 @@
     </div>
   </div>
 </div>
-
-<%= render partial: 'shared/map', locals: { lat: @latitude, lng: @longitude, markers: Invite.markers } %>
+<!-- TODO add user country as default -->
+<%= render partial: 'shared/map', locals: { lat: @latitude, lng: @longitude, location: @location, location_details: @location_details } %>
 
 <footer class="text-muted">
   <div class="container">
