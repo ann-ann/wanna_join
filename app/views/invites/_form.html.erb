@@ -30,8 +30,8 @@
     <%= f.text_field :location_details, class: "form-control", placeholder: 'club, bar, hotel etc' %>
   </fieldset>
 
-  <%= render partial: 'shared/map', locals: { lat: @invite.latitude , lng: @invite.longitude, location: @invite.location, location_details: @invite.location_details } %>
-  <%#=  render 'shared/geocoder' %>
+  <%= render partial: 'shared/map' %>
+  <%=  render partial: 'shared/geocoder', locals: { lat: @invite.latitude , lng: @invite.longitude, location: @invite.location, location_details: @invite.location_details } %>
 
   <%= f.hidden_field :latitude %>
 

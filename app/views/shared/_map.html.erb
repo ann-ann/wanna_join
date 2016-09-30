@@ -1,20 +1,4 @@
-
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;' class="leaflet-container leaflet-fade-anim leaflet-grab leaflet-touch-drag" tabindex="0">
   </div>
 </div>
-
-<script>
-  var map = L.map('map').setView(["<%= lat %>", "<%= lng %>"], 15);
-  map.scrollWheelZoom.disable();
-
-  L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=<%= ENV['MAPBOX_TOKEN'] %>", {
-    maxZoom: 18,
-    id: 'mapbox.streets'
-  }).addTo(map);
-  var marker = L.marker(["<%= lat %>", "<%= lng %>"]);
-  marker.addTo(map);
-  "<% if location.present? || location_details.present? %>"
-    marker.bindPopup("<b><%= location %></b></br><%= location_details %>").openPopup();
-  "<% end %>"
-</script>

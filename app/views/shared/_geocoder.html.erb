@@ -1,20 +1,38 @@
 <% content_for :javascripts do %>
   <script type='text/javascript'>
 
-    var geocoder = new google.maps.Geocoder();
-    map = new google.maps.Map(document.getElementById("map"), myOptions);
+    var latlng = new google.maps.LatLng("<%= lat %>", "<%= lng %>");
+    var myOptions = {
+       zoom: 13,
+       center: latlng,
+       mapTypeId: google.maps.MapTypeId.ROADMAP
+     };
+     map = new google.maps.Map(document.getElementById("map"), myOptions);
 
-    geocode = function()
-    {
-      var address = $('#invite_location').val();
+    var geocoder = new google.maps.Geocoder();
+    var marker = new google.maps.Marker({
+      map: map,
+      content: "<b><%= location %></b></br><%= location_details %>"
+    });
+    marker.setPosition(latlng);
+
+
+    "<% if location.present? || location_details.present? %>"
+      var infowindow = new google.maps.InfoWindow();
+
+      infowindow.setContent(marker.content);
+      infowindow.open(map, marker);
+    "<% end %>"
+
+    geocode = function() {
+      var address = [$('#invite_country').val(), $('#invite_city').val(), $('#invite_location').val()].join(" ");
       geocoder.geocode( { 'address': address}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK)
         {
           map.setCenter(results[0].geometry.location);
-          var marker = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location
-          });
+
+
+          marker.setPosition(results[0].geometry.location);
           $('#invite_latitude').val(results[0].geometry.location.lat());
           $('#invite_longitude').val(results[0].geometry.location.lng());
         }
@@ -26,6 +44,8 @@
       });
     }
 
+  $('#invite_country').keyup(geocode);
+  $('#invite_city').keyup(geocode);
   $('#invite_location').keyup(geocode);
 
   </script>
