@@ -11,5 +11,11 @@ Rails.application.routes.draw do
     resources :comments, only: [:index, :create]
   end
 
-  resources :users
+  resources :users, path: :account do
+    collection do
+      get :profile, :edit
+    end
+  end
+
+
 end
