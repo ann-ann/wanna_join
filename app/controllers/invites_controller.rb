@@ -2,7 +2,7 @@ class InvitesController < ApplicationController
   before_action :set_invite, only: [:show, :edit, :update, :destroy]
 
   def index
-    @invites = Invite.all
+    @invites = Invite.ordered
   end
 
   def show
@@ -20,7 +20,7 @@ class InvitesController < ApplicationController
     @invite = current_user.invites.new(invite_params)
     respond_to do |format|
       if @invite.save
-        format.html { redirect_to invites_url, flash: { success: t('flash.invites.create.notice') } }
+        format.html { redirect_to @invite, flash: { success: t('flash.invites.create.notice') } }
       else
         format.html { render action: "new" }
       end

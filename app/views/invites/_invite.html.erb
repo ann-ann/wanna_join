@@ -7,7 +7,7 @@
     </div>
     <div>
       <%= link_to invite.user.name, invite.user %> says: <%= link_to invite.title, invite %>
-      at <%= invite.location %> around <%= format_datetime(invite.date)  %>
+      at <%= link_to invite.location, maps_link(invite), target: "_blank" %> around <%= format_datetime(invite.date)  %>
     </div>
   </div>
   <div class="row">
