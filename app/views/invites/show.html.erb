@@ -1,7 +1,7 @@
 <%= render partial: 'invite', locals:{invite: @invite} %>
 
 <%= render partial: 'shared/map' %>
-<%=  render partial: 'shared/geocoder', locals: { lat: @invite.latitude , lng: @invite.longitude, location: @invite.location, location_details: @invite.location_details } %>
+<%=  render partial: 'shared/geocoder', locals: { lat: @invite.latitude , lng: @invite.longitude, location: @invite.location, location_details: @invite.location_details, markers: [] } %>
 
 <div class="panel panel-default">
   <h4>Comments:</h3>

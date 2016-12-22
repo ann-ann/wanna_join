@@ -31,7 +31,7 @@
   </fieldset>
 
   <%= render partial: 'shared/map' %>
-  <%=  render partial: 'shared/geocoder', locals: { lat: @invite.latitude , lng: @invite.longitude, location: @invite.location, location_details: @invite.location_details } %>
+  <%=  render partial: 'shared/geocoder', locals: { lat: @invite.latitude , lng: @invite.longitude, location: @invite.location, location_details: @invite.location_details, markers: [] } %>
 
   <%= f.hidden_field :latitude %>
 

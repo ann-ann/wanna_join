@@ -45,7 +45,7 @@
 </div>
 <!-- TODO add user city as default and markers by city -->
 <%= render partial: 'shared/map' %>
-<%=  render partial: 'shared/geocoder', locals: { lat: @latitude , lng: @longitude, location: nil, location_details: nil } %>
+<%=  render partial: 'shared/geocoder', locals: { lat: @latitude , lng: @longitude, markers: @markers, location: nil, location_details: 'im here' } %>
 
 <footer class="text-muted">
   <div class="container">

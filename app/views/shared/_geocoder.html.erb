@@ -1,27 +1,37 @@
 <% content_for :javascripts do %>
   <script type='text/javascript'>
 
-    var latlng = new google.maps.LatLng("<%= lat %>", "<%= lng %>");
+    var mainLatlng = new google.maps.LatLng("<%= lat %>", "<%= lng %>");
     var myOptions = {
        zoom: 13,
-       center: latlng,
+       center: mainLatlng,
        mapTypeId: google.maps.MapTypeId.ROADMAP
      };
      map = new google.maps.Map(document.getElementById("map"), myOptions);
 
+    // set invites positions
+    <% markers.each do |m| %>
+      var marker = new google.maps.Marker({
+        map: map
+      });
+      var latlng = new google.maps.LatLng("<%= m.latitude %>", "<%= m.longitude %>");
+      marker.setPosition(latlng);
+    <% end %>
+
+    // set user position
     var geocoder = new google.maps.Geocoder();
-    var marker = new google.maps.Marker({
+    var mainMarker = new google.maps.Marker({
       map: map,
       content: "<b><%= location %></b></br><%= location_details %>"
     });
-    marker.setPosition(latlng);
 
+    mainMarker.setPosition(mainLatlng);
 
     "<% if location.present? || location_details.present? %>"
       var infowindow = new google.maps.InfoWindow();
 
-      infowindow.setContent(marker.content);
-      infowindow.open(map, marker);
+      infowindow.setContent(mainMarker.content);
+      infowindow.open(map, mainMarker);
     "<% end %>"
 
     geocode = function() {

@@ -3,5 +3,8 @@ class WelcomeController < ApplicationController
   def index
     @latitude = request.location.latitude
     @longitude = request.location.longitude
+
+    # TODO change to only user country invites
+    @markers = Invite.all
   end
 end
