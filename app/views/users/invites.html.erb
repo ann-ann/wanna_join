@@ -1,0 +1,5 @@
+<div class="container">
+  <%= link_to t('.create_invite'), new_invite_path, class: "btn btn-primary pull-right" %>
+  <h2>My invites:</h1>
+  <%= render partial: 'invites/invite', collection: @invites %>
+</div>

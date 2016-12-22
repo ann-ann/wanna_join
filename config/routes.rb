@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :users, path: :account do
     collection do
-      get :profile, :edit
+      get :profile, :edit, :invites
     end
   end
 

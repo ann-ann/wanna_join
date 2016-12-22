@@ -5,6 +5,10 @@ class UsersController < ApplicationController
   def profile
   end
 
+  def invites
+    @invites = current_user.invites.ordered
+  end
+
   # def settings
   # end
 

@@ -26,10 +26,11 @@
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.name %></a>
               <div class="dropdown-menu">
                 <%= link_to 'My profile', profile_users_path, class: 'dropdown-item' %>
+                <%= link_to 'My invites', invites_users_path, class: 'dropdown-item' %>
                 <%= link_to 'Log Out', logout_path, class: 'dropdown-item' %>
               </div>
             </li>
-            <li class="nav-item"><%= link_to image_tag(current_user.try(:image_url), class: 'avatar img-circle'), current_user %> </li>
+            <li class="nav-item"><%= link_to image_tag(current_user.try(:image_url), class: 'avatar img-circle'), profile_users_path %> </li>
           </ul>
         </div>
       </nav>
