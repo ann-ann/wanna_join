@@ -42,7 +42,7 @@
           map.setCenter(results[0].geometry.location);
 
 
-          marker.setPosition(results[0].geometry.location);
+          mainMarker.setPosition(results[0].geometry.location);
           $('#invite_latitude').val(results[0].geometry.location.lat());
           $('#invite_longitude').val(results[0].geometry.location.lng());
         }
