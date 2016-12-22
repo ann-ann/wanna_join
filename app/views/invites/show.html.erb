@@ -1,3 +1,10 @@
+<div class="container-fluid">
+<%= link_to '< Back to invites list', invites_path, class: 'btn btn-primary' %>
+<% if current_user && @invite.user.eql?(current_user) %>
+  <%= link_to t('.edit'), edit_invite_path(@invite), class: 'btn btn-primary pull-right' %>
+<% end %>
+</div>
+
 <%= render partial: 'invite', locals:{invite: @invite} %>
 
 <%= render partial: 'shared/map' %>
@@ -15,5 +22,4 @@
 
 <%= render 'comments/form' %>
 
-<%= link_to t('.edit'), edit_invite_path(@invite) %> |
-<%= link_to t('.back'), invites_path %>
+
