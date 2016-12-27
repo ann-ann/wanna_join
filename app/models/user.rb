@@ -15,4 +15,8 @@ class User < ApplicationRecord
     user.save!
     user
   end
+
+  def age
+    Date.today.year - self.date_of_birth.try(:year) if self.date_of_birth?
+  end
 end

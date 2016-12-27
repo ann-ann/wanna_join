@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:destroy, :update]
-  before_action :load_current_user, only: [:edit, :profile, :settings, :edit_profile]
+  before_action :set_user, only: [:destroy]
+  before_action :load_current_user, only: [:edit, :profile, :settings, :edit_profile, :update]
 
   def profile
   end
@@ -49,6 +49,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :email, :age, :interests, :uid, :image_url, :city, :country)
+      params.require(:user).permit(:name, :email, :date_of_birth, :interests, :uid, :image_url, :city, :country)
     end
 end
